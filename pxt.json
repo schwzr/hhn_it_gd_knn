@@ -1,0 +1,17 @@
+{
+    "name": "pxt-hhn-ml",
+    "version": "0.1",
+    "description": "Some simple ml functions for HHN Girls Day",
+    "dependencies": {
+        "core": "*"
+    },
+    "files": [
+        "README.md",
+        "hhn_ml.ts"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/simonschweizer/hhn_it_gd_knn.git"
+    },
+    "public": true
+}
