@@ -1,6 +1,6 @@
 {
     "name": "pxt-hhn-ml",
-    "version": "0.1",
+    "version": "0.2",
     "description": "Some simple ml functions for HHN Girls Day",
     "dependencies": {
         "core": "*"
