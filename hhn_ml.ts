@@ -7,16 +7,16 @@
 
 //% color=190 weight=100 icon="\uf1ec" block="ml_knn"
 namespace ml_knn {
-    let instance: KNN = new KNN(2);
+    let instance: KNN = new KNN(3);
 
     //% block
-    export function train(temperature: number, location: Location): void {
-        instance.train(temperature, location);
+    export function train(val: number, location: Location): void {
+        instance.train(val, location);
     }
 
     //% block
-    export function predict(temperature: number): Location {
-        return instance.predict(temperature, 1);
+    export function predict(val: number): Location {
+        return instance.predict(val, 1);
     }
 }
 
@@ -28,24 +28,25 @@ namespace ml_dt {
     let changed: boolean = true;
 
     //% block
-    export function train(temperature: number, location: Location): void {
-        instance.add(temperature, location);
+    export function train(val: number, location: Location): void {
+        instance.add(val, location % 2); // TODO fixme ...
         changed = true;
     }
 
     //% block
-    export function predict(temperature: number): Location {
+    export function predict(val: number): Location {
         if (changed) {
             instance.train();
             changed = false;
         }
-        return instance.predict(temperature);
+        return instance.predict(val);
     }
 }
 
 enum Location {
     INSIDE,
-    OUTSIDE
+    OUTSIDE,
+    BASEMENT
 }
 
 //% fixedInstances
